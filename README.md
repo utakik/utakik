@@ -1,8 +1,9 @@
 ## Hi there 👋
 
-<!--
-**utakik/utakik** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 🚀 Recent Project
+[Human Sensing with AI in Hanoi Cafe]
 
+### 📸 Instagram (Auto-updated)
 Here are some ideas to get you started:
 
 - 🔭 I’m currently working on ...
