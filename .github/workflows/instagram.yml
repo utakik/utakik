@@ -13,7 +13,7 @@ jobs:
       - name: Generate Instagram Posts
         uses: snehanshu/instagram-readme-action@v1.4.0
         with:
-          username: [あなたのInstagramユーザー名]
+          username: [utakik]
       - name: Commit and Push
         run: |
           git config --global user.name 'github-actions[bot]'
