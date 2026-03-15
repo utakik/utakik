@@ -13,7 +13,8 @@ jobs:
       - name: Generate Instagram Posts
         uses: snehanshu/instagram-readme-action@v1.4.0
         with:
-          username: [utakik]
+          # カッコを外して、クォーテーションで囲むのが一番安全です
+          username: 'utakik'
       - name: Commit and Push
         run: |
           git config --global user.name 'github-actions[bot]'
