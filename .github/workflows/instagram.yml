@@ -1,8 +1,8 @@
 name: Update Instagram Posts
 on:
   schedule:
-    - cron: '0 0 * * *' # 毎日24時（日本時間だと朝9時）に更新
-  workflow_dispatch: # 手動で即座に更新したい時用
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate Instagram Posts
-        uses: snehanshu/instagram-readme-action@v1.4.0
+        # 別の安定したロボットに差し替えました
+        uses: bolajiayodeji/instagram-to-readme@v1
         with:
-          # カッコを外して、クォーテーションで囲むのが一番安全です
           username: 'utakik'
       - name: Commit and Push
         run: |
