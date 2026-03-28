@@ -1,24 +1,31 @@
 name: Update Instagram Posts
+
 on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     name: Update README with Instagram Posts
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Generate Instagram Posts
-        # 別の安定したロボットに差し替えました
         uses: bolajiayodeji/instagram-to-readme@v1
         with:
-          username: 'utakik'
+          username: utakik
+
       - name: Commit and Push
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update Instagram posts" || exit 0
+          git diff --cached --quiet || git commit -m "Update Instagram posts"
           git push
